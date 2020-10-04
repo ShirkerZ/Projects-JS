@@ -1,0 +1,426 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #132031;
+  font-family: sans-serif;
+}
+
+body .score {
+  height: 20vh;
+  font-size: 1.5rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body .score .player-score,
+body .score .computer-score {
+  margin: 1rem;
+}
+
+body .intro {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+body .intro .title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+}
+
+body .intro .play {
+  margin-top: 4rem;
+  font-size: 2rem;
+  background: #E44E4E;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+body .game-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: opacity .5s ease .5s;
+  transition: opacity .5s ease .5s;
+}
+
+body .game-container .select {
+  color: white;
+  font-size: 2rem;
+}
+
+body .game-container .options {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'rock rock rock' 'paper . scissors';
+  height: 30vh;
+}
+
+body .game-container .options .rock,
+body .game-container .options .paper,
+body .game-container .options .scissors {
+  margin: 1.5rem;
+  cursor: pointer;
+}
+
+body .game-container .options .rock .icon,
+body .game-container .options .paper .icon,
+body .game-container .options .scissors .icon {
+  color: white;
+  font-size: 4.5rem;
+}
+
+body .game-container .options .rock {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: rock;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background: none;
+  border: 4px solid red;
+  height: 20vh;
+  width: 20vh;
+  -webkit-transform: translate(70%, 0%);
+          transform: translate(70%, 0%);
+  border-radius: 50%;
+}
+
+body .game-container .options .paper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: paper;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  border: 4px solid green;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+}
+
+body .game-container .options .scissors {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: scissors;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  border: 4px solid blue;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+}
+
+body .battle {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  height: 50vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: .5fr 1fr;
+      grid-template-rows: .5fr 1fr;
+  -webkit-transition: opacity .5s ease .5s;
+  transition: opacity .5s ease .5s;
+}
+
+body .battle .winner {
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  color: white;
+  font-size: 3rem;
+}
+
+body .battle .play-again {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 200%);
+          transform: translate(-50%, 200%);
+  margin-top: 5rem;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  background: #E44E4E;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+body .battle .player-side,
+body .battle .computer-side {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .battle .player-side .rock,
+body .battle .player-side .paper,
+body .battle .player-side .scissors,
+body .battle .computer-side .rock,
+body .battle .computer-side .paper,
+body .battle .computer-side .scissors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+}
+
+body .battle .player-side .rock .icon,
+body .battle .player-side .paper .icon,
+body .battle .player-side .scissors .icon,
+body .battle .computer-side .rock .icon,
+body .battle .computer-side .paper .icon,
+body .battle .computer-side .scissors .icon {
+  color: white;
+  font-size: 5rem;
+}
+
+body .battle .player-side .rock,
+body .battle .computer-side .rock {
+  border: 4px solid red;
+}
+
+body .battle .player-side .paper,
+body .battle .computer-side .paper {
+  border: 4px solid green;
+}
+
+body .battle .player-side .scissors,
+body .battle .computer-side .scissors {
+  border: 4px solid blue;
+}
+
+body .battle .player-side .rock,
+body .battle .player-side .paper,
+body .battle .player-side .scissors {
+  -webkit-animation: handShakePlayer 1s ease 1s;
+          animation: handShakePlayer 1s ease 1s;
+}
+
+body .battle .computer-side .rock,
+body .battle .computer-side .paper,
+body .battle .computer-side .scissors {
+  -webkit-animation: handShakeComputer 1s ease 1s;
+          animation: handShakeComputer 1s ease 1s;
+}
+
+@media screen and (min-width: 600px) {
+  body .score {
+    font-size: 2rem;
+  }
+  body .intro .title {
+    font-size: 4rem;
+    width: 100vw;
+  }
+  body .intro .play {
+    font-size: 2.5rem;
+  }
+  body .game-container .select {
+    font-size: 4rem;
+  }
+  body .game-container .options .rock,
+  body .game-container .options .paper,
+  body .game-container .options .scissors {
+    margin: 3rem;
+  }
+  body .game-container .options .rock .icon,
+  body .game-container .options .paper .icon,
+  body .game-container .options .scissors .icon {
+    font-size: 7rem;
+  }
+  body .battle .winner {
+    font-size: 4rem;
+  }
+  body .battle .player-side .rock .icon,
+  body .battle .player-side .paper .icon,
+  body .battle .player-side .scissors .icon,
+  body .battle .computer-side .rock .icon,
+  body .battle .computer-side .paper .icon,
+  body .battle .computer-side .scissors .icon {
+    font-size: 7rem;
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@-webkit-keyframes handShakePlayer {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes handShakePlayer {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes handShakeComputer {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes handShakeComputer {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+/*# sourceMappingURL=style.css.map */

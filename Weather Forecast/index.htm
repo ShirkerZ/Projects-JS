@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/1640a3f9de.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="city">Insert city name</label>
+        <div class="input">
+            <button class="btn-location"><i class="fas fa-map-marker-alt"></i></button>
+            <input type="text" id="city" name="city">
+            <button type="submit" class="submit">Submit</button>
+        </div>
+    </form>
+
+    <div class="location">
+        <h1 class="timezone">Timezone</h1>
+        <img class="icon" src="http://openweathermap.org/img/wn/01d@4x.png" alt="">
+    </div>
+
+    <div class="temperature">
+        <div class="degree-section">
+            <div class="degree-container">
+                <h2 class="degree">54</h2>
+                <span>C</span>
+            </div>
+            <div class="minmax">
+                <span class="max">1</span>
+                <span>/</span>
+                <span class="min">1</span>
+            </div>
+
+        </div>
+        <div class="description">kinda hot</div>
+    </div>
+    <script src="./JS/app.js"></script>
+</body>
+
+</html>

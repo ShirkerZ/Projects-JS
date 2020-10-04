@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2f96a3), to(#303e8f));
+  background-image: linear-gradient(#2f96a3, #303e8f);
+  font-family: sans-serif;
+  color: white;
+}
+
+body form {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  grid-area: form;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body form label {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+body form .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body form .input .btn-location {
+  padding: .7rem;
+  font-size: 1.5rem;
+  border-radius: 15px;
+}
+
+body form .input input {
+  border-radius: 20px;
+  font-size: 2rem;
+  width: 200px;
+  padding: .5rem;
+  border: none;
+  outline: none;
+  margin: 0 .5rem;
+}
+
+body form .input button {
+  border-radius: 20px;
+  background-color: #f17a35;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  cursor: pointer;
+  -webkit-transition: background-color .5s ease, color .5s ease;
+  transition: background-color .5s ease, color .5s ease;
+}
+
+body form .input button:hover {
+  color: #f17a35;
+  background-color: white;
+}
+
+body .location {
+  height: 10vh;
+  width: 100%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .location .timezone {
+  font-size: 2rem;
+}
+
+body .temperature {
+  height: 10vh;
+  width: 50%;
+  margin-top: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .temperature .degree-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+body .temperature .degree-section .degree-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .temperature .degree-section .degree-container span {
+  margin-top: 1rem;
+  margin-left: .5rem;
+  font-size: 3rem;
+}
+
+body .temperature .degree-section .degree-container .degree {
+  margin-top: 1rem;
+  font-size: 4rem;
+}
+
+body .temperature .degree-section .minmax {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+body .temperature .description {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  body form {
+    margin-top: 10rem;
+  }
+  body form label {
+    font-size: 4rem;
+  }
+  body form .input {
+    margin-left: 7rem;
+  }
+  body form .input .btn-location {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  body form .input input {
+    width: 500px;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+  body form .input button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+  body .location {
+    margin-top: 3rem;
+  }
+  body .location .timezone {
+    font-size: 3rem;
+  }
+  body .temperature .degree-section .degree-container .degree {
+    font-size: 5rem;
+  }
+  body .temperature .degree-section .degree-container span {
+    font-size: 4rem;
+  }
+  body .temperature .degree-section .minmax {
+    margin-top: 2rem;
+    font-size: 3rem;
+  }
+  body .temperature .description {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

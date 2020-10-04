@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #132031;
+    font-family: sans-serif;
+    .score {
+        height: 20vh;
+        font-size: 1.5rem;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        .player-score,
+        .computer-score {
+            margin: 1rem;
+        }
+    }
+    .intro {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: opacity .5s ease;
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            padding: 1rem;
+        }
+        .play {
+            margin-top: 4rem;
+            font-size: 2rem;
+            background: #E44E4E;
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+            padding: 1rem;
+            color: white;
+            cursor: pointer;
+        }
+    }
+    .game-container {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: opacity .5s ease .5s;
+        .select {
+            color: white;
+            font-size: 2rem;
+        }
+        .options {
+            display: grid;
+            grid-template-areas: 'rock rock rock' 'paper . scissors';
+            height: 30vh;
+            .rock,
+            .paper,
+            .scissors {
+                margin: 1.5rem;
+                cursor: pointer;
+                .icon {
+                    color: white;
+                    font-size: 4.5rem;
+                }
+            }
+            .rock {
+                grid-area: rock;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+                background: none;
+                border: 4px solid red;
+                height: 20vh;
+                width: 20vh;
+                transform: translate(70%, 0%);
+                border-radius: 50%;
+            }
+            .paper {
+                grid-area: paper;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                border: 4px solid green;
+                height: 20vh;
+                width: 20vh;
+                border-radius: 50%;
+            }
+            .scissors {
+                grid-area: scissors;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                border: 4px solid blue;
+                height: 20vh;
+                width: 20vh;
+                border-radius: 50%;
+            }
+        }
+    }
+    .battle {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        height: 50vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr 1fr;
+        transition: opacity .5s ease .5s;
+        .winner {
+            text-align: center;
+            grid-row: 1/2;
+            grid-column: 1/3;
+            color: white;
+            font-size: 3rem;
+        }
+        .play-again {
+            position: absolute;
+            bottom: 1%;
+            left: 50%;
+            transform: translate(-50%, 200%);
+            margin-top: 5rem;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            background: #E44E4E;
+            border: none;
+            border-radius: 10px;
+            padding: 1rem;
+            color: white;
+            cursor: pointer;
+        }
+        .player-side,
+        .computer-side {
+            grid-row: 2/3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .rock,
+            .paper,
+            .scissors {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                height: 20vh;
+                width: 20vh;
+                border-radius: 50%;
+                .icon {
+                    color: white;
+                    font-size: 5rem;
+                }
+            }
+            .rock {
+                border: 4px solid red;
+            }
+            .paper {
+                border: 4px solid green;
+            }
+            .scissors {
+                border: 4px solid blue;
+            }
+        }
+        .player-side {
+            .rock,
+            .paper,
+            .scissors {
+                animation: handShakePlayer 1s ease 1s;
+            }
+        }
+        .computer-side {
+            .rock,
+            .paper,
+            .scissors {
+                animation: handShakeComputer 1s ease 1s;
+            }
+        }
+    }
+}
+
+@media screen and(min-width:600px) {
+    body {
+        .score {
+            font-size: 2rem;
+        }
+        .intro {
+            .title {
+                font-size: 4rem;
+                width: 100vw;
+            }
+            .play {
+                font-size: 2.5rem;
+            }
+        }
+        .game-container {
+            .select {
+                font-size: 4rem;
+            }
+            .options {
+                .rock,
+                .paper,
+                .scissors {
+                    margin: 3rem;
+                    .icon {
+                        font-size: 7rem;
+                    }
+                }
+            }
+        }
+        .battle {
+            .winner {
+                font-size: 4rem;
+            }
+            .player-side,
+            .computer-side {
+                .rock,
+                .paper,
+                .scissors {
+                    .icon {
+                        font-size: 7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes handShakePlayer {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes handShakeComputer {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

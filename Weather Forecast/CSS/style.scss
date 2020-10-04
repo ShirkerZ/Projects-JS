@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    font-family: sans-serif;
+    color: white;
+    form {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        grid-area: form;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        label {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn-location {
+                padding: .7rem;
+                font-size: 1.5rem;
+                border-radius: 15px;
+            }
+            input {
+                border-radius: 20px;
+                font-size: 2rem;
+                width: 200px;
+                padding: .5rem;
+                border: none;
+                outline: none;
+                margin: 0 .5rem;
+            }
+            button {
+                border-radius: 20px;
+                background-color: rgb(241, 122, 53);
+                color: white;
+                font-size: 1rem;
+                border: none;
+                outline: none;
+                padding: 1rem;
+                cursor: pointer;
+                transition: background-color .5s ease, color .5s ease;
+                &:hover {
+                    //background-color: rgb(231, 103, 28);
+                    color: rgb(241, 122, 53);
+                    background-color: white;
+                }
+            }
+        }
+    }
+    .location {
+        height: 10vh;
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .timezone {
+            font-size: 2rem;
+        }
+    }
+    .temperature {
+        height: 10vh;
+        width: 50%;
+        margin-top: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .degree-section {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 1rem;
+            cursor: pointer;
+            .degree-container {
+                display: flex;
+                align-items: center;
+                span {
+                    margin-top: 1rem;
+                    margin-left: .5rem;
+                    font-size: 3rem;
+                }
+                .degree {
+                    margin-top: 1rem;
+                    font-size: 4rem;
+                }
+            }
+            .minmax {
+                margin-top: 1rem;
+                font-size: 2rem;
+            }
+        }
+        .description {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and(min-width: 750px) {
+    body {
+        form {
+            margin-top: 10rem;
+            label {
+                font-size: 4rem;
+            }
+            .input {
+                margin-left: 7rem;
+                .btn-location {
+                    font-size: 2rem;
+                    padding: 1rem;
+                }
+                input {
+                    width: 500px;
+                    font-size: 2rem;
+                    padding: 1rem;
+                    margin: 0 1rem;
+                }
+                button {
+                    font-size: 2rem;
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+        .location {
+            margin-top: 3rem;
+            .timezone {
+                font-size: 3rem;
+            }
+        }
+        .temperature {
+            .degree-section {
+                .degree-container {
+                    .degree {
+                        font-size: 5rem;
+                    }
+                    span {
+                        font-size: 4rem;
+                    }
+                }
+                .minmax {
+                    margin-top: 2rem;
+                    font-size: 3rem;
+                }
+            }
+            .description {
+                margin-top: 2rem;
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
